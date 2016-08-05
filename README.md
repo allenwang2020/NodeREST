@@ -1,6 +1,6 @@
 ## Creating ReSTful API using NodeJS and consuming in AngularJS
 
-Create simple ReST API using NodeJS, MongoDB and consuming in a application created with AngularJSaa
+Create simple ReST API using NodeJS, MongoDB and consuming in a application created with AngularJS
 
 #### Requirements
 Install the following 2 softwares
