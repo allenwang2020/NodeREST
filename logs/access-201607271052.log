@@ -1,0 +1,1 @@
+127.0.0.1 - - [27/Jul/2016:02:52:03 +0000] "GET /login/login.view.html HTTP/1.1" 404 34 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"

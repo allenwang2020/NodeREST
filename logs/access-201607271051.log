@@ -1,0 +1,2 @@
+127.0.0.1 - - [27/Jul/2016:02:51:33 +0000] "GET /products HTTP/1.1" 404 21 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+127.0.0.1 - - [27/Jul/2016:02:51:54 +0000] "GET /index HTTP/1.1" 404 18 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
