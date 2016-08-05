@@ -1,5 +1,6 @@
 
 // Dependencies
+var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
@@ -49,6 +50,11 @@ app.use('/api', require('./routes/api'));
 
 var port = config.server_port || 8080
 , ip = config.server_ip || "127.0.0.1";
-app.listen(port, ip, function() {
-  console.log('Express server listening on %d', port);
+//app.listen(port, ip, function() {
+//  console.log('Express server listening on %d', port);
+//});
+
+var server = http.createServer(app);
+server.listen(port, function() {
+  console.log('Server running on ' + port);
 });
