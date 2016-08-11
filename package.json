@@ -4,7 +4,7 @@
   "description": "A simple RESTFul API created using nodejs that talks to Mongodb database",
   "main": "server.js",
   "scripts": {
-	    "start": "node index.js" 	
+	    "start": "node server.js" 	
 	  },
   "author": "allen",
   "license": "ISC",
@@ -18,7 +18,6 @@
     "morgan": "^1.7.0",
     "passport-jwt": "^2.0.0",
     "passport": "^0.3.2",
-    "jwt-simple": "^0.5.2",
     "fs": "^0.0.2",
     "file-stream-rotator": "^0.0.6"
   },

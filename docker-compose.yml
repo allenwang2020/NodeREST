@@ -1,9 +1,7 @@
-version: 2
-services:
    web:
      build: .
      ports:
-       - 3000:3000
+       - 8080:8080
      links:
        - mongo:mongo
    mongo:  
@@ -12,3 +10,4 @@ services:
        - 27017:27017
      volumes:
        - ./data/db:/data/db/products-demo
+

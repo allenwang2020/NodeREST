@@ -56,5 +56,5 @@ var port = config.server_port || 8080
 
 var server = http.createServer(app);
 server.listen(port, function() {
-  console.log('Server running on ' + ip+port);
+  console.log('Server running on ' + ip+":"+port);
 });
