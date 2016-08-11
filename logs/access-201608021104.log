@@ -1,3 +1,0 @@
-127.0.0.1 - - [02/Aug/2016:03:04:01 +0000] "GET /api/products/574e47b307a69bd402585b00 HTTP/1.1" 200 88 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
-127.0.0.1 - - [02/Aug/2016:03:04:02 +0000] "PUT /api/products/574e47b307a69bd402585b00 HTTP/1.1" 200 88 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
-127.0.0.1 - - [02/Aug/2016:03:04:02 +0000] "GET /api/products HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"

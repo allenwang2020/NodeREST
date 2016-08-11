@@ -3,7 +3,7 @@
 var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
+//var morgan = require('morgan');
 var config = require('./config/config');
 
 
@@ -23,24 +23,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //use morgan to log requests to the console
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
-var logger = require('morgan');
-var fs = require('fs')
-var FileStreamRotator = require('file-stream-rotator')
-var logDirectory = __dirname + '/logs'
+//var logger = require('morgan');
+//var fs = require('fs')
+//var FileStreamRotator = require('file-stream-rotator')
+//var logDirectory = __dirname + '/logs'
 
 // ensure log directory exists
-fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory)
+//fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory)
 
 // create a rotating write stream
-var accessLogStream = FileStreamRotator.getStream({
-  filename: logDirectory + '/access-%DATE%.log',
-  frequency: 'daily',
-  verbose: false
-})
-// setup the logger
-app.use(logger('combined', {stream: accessLogStream}))
+//var accessLogStream = FileStreamRotator.getStream({
+//  filename: logDirectory + '/access-%DATE%.log',
+//  frequency: 'daily',
+//  verbose: false
+//})
+//// setup the logger
+//app.use(logger('combined', {stream: accessLogStream}))
 
 
 // Routes
@@ -56,5 +56,5 @@ var port = config.server_port || 8080
 
 var server = http.createServer(app);
 server.listen(port, function() {
-  console.log('Server running on ' + port);
+  console.log('Server running on ' + ip+port);
 });

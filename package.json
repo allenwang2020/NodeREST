@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A simple RESTFul API created using nodejs that talks to Mongodb database",
   "main": "server.js",
+  "scripts": {
+	    "start": "node index.js" 	
+	  },
   "author": "allen",
   "license": "ISC",
   "dependencies": {
