@@ -30,8 +30,8 @@ deployment:
    development:
     branch: develop 
     commands:
-     - eb deploy env-development  
+     - eb deploy NodeREST-env-development  
    production:      
     branch: master      
     commands:
-     - eb deploy env-production  
+     - eb deploy NodeREST-env-production  
