@@ -10,6 +10,7 @@ dependencies:
    pre:
     # 安裝 eb
    - pip install --upgrade pip
+   - pip install awsebcli
    - eb init -p docker
    override:      
 # 建構方式使用 docker build      
