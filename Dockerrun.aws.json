@@ -1,33 +1,7 @@
 {
   "AWSEBDockerrunVersion": 1,
-  "volumes": [
-    {
-      "name": "node-web",
-      "host": {
-        "sourcePath": "/var/app/current/"
-      }
-     
-    }
-  ],
+  
   "containerDefinitions": [
-    {
-      "name": "node-web",
-      "image": "node:4.4.2",
-      "essential": true,
-      "memory": 128,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 8080
-        }
-      ],      
-      "mountPoints": [
-        {
-          "sourceVolume": "node-web",
-          "containerPath": "/usr/src/app"
-        }
-      ]
-    },
     {
       "name": "db",
       "image": "mongo",
