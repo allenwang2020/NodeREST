@@ -25,4 +25,4 @@ linux
 * npm install
 * node server
 
-Open your browser and point to http://localhost:8080
+Open  your browser and point to http://localhost:8080
