@@ -1,52 +1,10 @@
-{
-  "AWSEBDockerrunVersion": "2",
-    "volumes": [
-    {
-      "name": "NodeREST",
-      "host": {
-        "sourcePath": "/var/app/current/"
-      }
-    }
-  ],
-  "containerDefinitions": [
-    {
-      "name": "noderest_web",
-      "image": "node:4.4.2",
-      "essential": true,
-      "memory": 128,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 8080
-        }
-      ],
-      "mountPoints": [
-        {
-          "sourceVolume": "noderest_web",
-          "containerPath": "/var/app/current/"
-        }
-      ],
-      "links": [
-        "db"
-      ]
-    },
-    {
-      "name": "db",
-      "image": "mongo",
-      "essential": true,
-      "memory": 128,
-      "portMappings": [
-        {
-          "hostPort": 27017,
-          "containerPort": 27017
-        }
-      ],
-      "mountPoints": [
-        {
-          "sourceVolume": "db",
-          "containerPath": "/data/db"
-        }
-      ]
-    }
-  ]
-}
+ {
+   "AWSEBDockerrunVersion": "1",
+   "Volumes": [
+     {
+       "ContainerDirectory": "/var/app",
+       "HostDirectory": "/var/app"
+     }
+   ],
+   "Logging": "/var/eb_log"
+ }
