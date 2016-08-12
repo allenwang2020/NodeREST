@@ -6,6 +6,8 @@ machine:
 # 環境改成 docker    
     services:      
        - docker    
+    post:
+       - sudo service mongodb stop   
 dependencies:  
    pre:
     # 安裝 eb
