@@ -1,8 +1,8 @@
 # circle.yml  
 machine:    
 # 安裝 eb 需要 python    
-    #python:      
-       #version: 2.7.9 
+    python:      
+       version: 2.7.9 
 # 環境改成 docker    
     services:      
        - docker    
