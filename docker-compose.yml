@@ -3,11 +3,11 @@
      ports:
        - 8080:8080
      links:
-       - mongo
-   mongo:  
+       - db 
+   db:  
      image: mongo
      ports:
-       - 27018:27018
+       - 27017:27017
      volumes:
        - /data/db/mongo/products-demo:/data/db/mongo/products-demo
 
