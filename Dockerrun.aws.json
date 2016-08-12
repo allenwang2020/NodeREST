@@ -2,15 +2,15 @@
   "AWSEBDockerrunVersion": 2,
   "volumes": [
     {
-      "name": "mongo-app",
+      "name": "db",
       "host": {
-        "sourcePath": "/var/app/current/mongo-app"
+        "sourcePath": "/var/app/current/db"
       }
     }
   ],
   "containerDefinitions": [
     {
-      "name": "mongo-app",
+      "name": "db",
       "image": "mongo",
       "essential": true,
       "memory": 6000,
@@ -23,11 +23,11 @@
       ],
       "mountPoints": [
         {
-          "sourceVolume": "mongo-app",
+          "sourceVolume": "db",
           "containerPath": "/data/db"
         },
         {
-          "sourceVolume": "awseb-logs-mongo-app",
+          "sourceVolume": "awseb-logs-db",
           "containerPath": "/var/log/mongodb"
         }
       ]
