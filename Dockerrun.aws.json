@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "mongo-app",
+      "host": {
+        "sourcePath": "/var/app/current/mongo-app"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "mongo-app",
+      "image": "mongo",
+      "essential": true,
+      "memory": 6000,
+      "command": ["mongod","--storageEngine=wiredTiger","--logpath=/var/log/mongodb/mongo.log"],
+    "portMappings": [
+        {
+          "hostPort": 27017,
+          "containerPort": 27017
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "mongo-app",
+          "containerPath": "/data/db"
+        },
+        {
+          "sourceVolume": "awseb-logs-mongo-app",
+          "containerPath": "/var/log/mongodb"
+        }
+      ]
+    }
+  ]
+}
