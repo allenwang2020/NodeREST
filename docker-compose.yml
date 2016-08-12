@@ -7,7 +7,7 @@
    mongo:  
      image: mongo:latest
      ports:
-       - 27017:27017
+       - 27018:27018
      volumes:
-       - ./data/db/mongo/products-demo:/data/db/products-demo
+       - /data/db/mongo/products-demo:/data/db/mongo/products-demo
 
