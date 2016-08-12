@@ -1,21 +1,41 @@
 {
-  "AWSEBDockerrunVersion": 2,
-  "volumes": [
+  "AWSEBDockerrunVersion": "2",
+    "volumes": [
     {
-      "name": "db",
+      "name": "NodeREST",
       "host": {
-        "sourcePath": "/var/app/current/db"
+        "sourcePath": "/var/app/current/"
       }
     }
   ],
   "containerDefinitions": [
     {
+      "name": "noderest_web",
+      "image": "node:4.4.2",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "noderest_web",
+          "containerPath": "/var/app/current/"
+        }
+      ],
+      "links": [
+        "db"
+      ]
+    },
+    {
       "name": "db",
       "image": "mongo",
       "essential": true,
-      "memory": 6000,
-      "command": ["mongod","--storageEngine=wiredTiger","--logpath=/var/log/mongodb/mongo.log"],
-    "portMappings": [
+      "memory": 128,
+      "portMappings": [
         {
           "hostPort": 27017,
           "containerPort": 27017
@@ -25,10 +45,6 @@
         {
           "sourceVolume": "db",
           "containerPath": "/data/db"
-        },
-        {
-          "sourceVolume": "awseb-logs-db",
-          "containerPath": "/var/log/mongodb"
         }
       ]
     }
