@@ -1,4 +1,4 @@
-{{
+{
 	  "AWSEBDockerrunVersion": 2,
 	  "volumes": [
 	    {
@@ -56,4 +56,4 @@
 	      ]
 	    }
 	  ]
-	}
+}
