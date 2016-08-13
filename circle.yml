@@ -17,8 +17,9 @@ dependencies:
    override:      
 # 建構方式使用 docker build      
    #-  docker info
-   #- docker build -t hello-ci-workflow .   
-   - docker-compose up -d
+   - docker build -t node-web -f Dockerfile.web . 
+   - docker build -t node-sv -f Dockerfile.db .  
+   #- docker-compose up -d
    - docker ps
          
 test:    
