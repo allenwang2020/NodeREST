@@ -1,19 +1,59 @@
-{
-  "AWSEBDockerrunVersion": "1",
-  "Image": {
-    "Name": "mongo",
-    "Update": "true"
-  },
-  "Ports": [
-    {
-      "ContainerPort": "27017"
-    }
-  ],
-  "Volumes": [
-    {
-      "HostDirectory": "/var/app/mongodb",
-      "ContainerDirectory": "/etc/mongodb"
-    }
-  ],
-  "Logging": "/var/log/nginx"
-}
+{{
+	  "AWSEBDockerrunVersion": 2,
+	  "volumes": [
+	    {
+	      "name": "node-web",
+	      "host": {
+	        "sourcePath": "/var/app/current"
+	      }
+	    },
+	    {
+	      "name": "node-db",
+	      "host": {
+		     "sourcePath": "/var/app/mongodb"
+		   }
+		}
+	  ],
+	  "containerDefinitions": [
+	    {
+	      "name": "node-web",
+	      "image": "node:4.4.2",
+	      "essential": true,
+	      "memory": 128,
+	      "portMappings": [
+	        {
+	          "hostPort": 80,
+	          "containerPort": 8080
+	        }
+	      ],
+	      "command": [
+	        "/bin/bash",
+	        "/usr/src/app/run.sh"
+	      ],
+	      "mountPoints": [
+	        {
+	          "sourceVolume": "node-web",
+	          "containerPath": "/usr/src/app"
+	        }
+	      ]
+	    },
+	    {
+	      "name": "mongodb",
+	      "image": "mongo",
+	      "essential": true,
+	      "memory": 256,
+	      "portMappings": [
+	        {
+	          "hostPort": 27017,
+	          "containerPort": 27017
+	        }
+	      ],
+	      "mountPoints": [
+	        {
+	          "sourceVolume": "node-db",
+	          "containerPath": "/etc/mongodb"
+	        }
+	      ]
+	    }
+	  ]
+	}
