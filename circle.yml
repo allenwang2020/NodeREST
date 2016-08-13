@@ -17,8 +17,8 @@ dependencies:
    override:      
 # 建構方式使用 docker build      
    #-  docker info
-   - docker build -t node-web -f Dockerfile.web . 
-   - docker build -t node-sv -f Dockerfile.db .  
+   #- docker build -t node-web -f Dockerfile.web . 
+   - docker build -t node-db -f Dockerfile.db .  
    #- docker-compose up -d
    - docker ps
          
