@@ -1,32 +1,11 @@
 {
-  "AWSEBDockerrunVersion": 2,
-  "volumes": [
-    {
-      "name": "node-web",
-      "host": {
-        "sourcePath": "/var/app/current"
-      }
-    }
-  ],
-  "containerDefinitions": [
-    {
-      "name": "db",
-      "image": "mongo",
-      "essential": true,
-      "memory": 128,
-      "environment": [
-        {
-          "name": "Container",
-          "value": "mongoDB"
-        }
-      ],
-      "portMappings": [
-        {
-          "hostPort": 27017,
-          "containerPort": 27017
-        }
-      ]
-    }
-  ]
+	  "AWSEBDockerrunVersion": "1",
+	  "Image" : {
+	    "Name" : "mongo"
+	  },
+	  "Ports": [
+	    {
+	      "ContainerPort": "27017"
+	    }
+	  ]
 }
-~        
