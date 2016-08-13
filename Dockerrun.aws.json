@@ -19,7 +19,7 @@
           "name": "Container",
           "value": "mongoDB"
         }
-      ],	
+      ],
       "portMappings": [
         {
           "hostPort": 27017,
@@ -29,3 +29,4 @@
     }
   ]
 }
+~        
