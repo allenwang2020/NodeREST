@@ -1,16 +1,37 @@
-// Load the http module to create an http server.
-var http = require('http');
 
-//MongoDB
+// Dependencies
+var http = require('http');
+var express = require('express');
+var bodyParser = require('body-parser');
+var config = require('./config/config');
+
+
+// MongoDB
 var Mongoose = require('./config/mongoose');
 var db =  new Mongoose();
 
-// Configure our HTTP server to respond with Hello World to all requests.
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/html"});
-  response.write("<h1>Hello World from Node.js app!!!</h1>\n");
-  response.end("<script type=\"text/javascript\">document.write('<h3><a href=\"http://' + location.host + ':8080/\">' + 'Tomcat Application on port 8080</a></h3>');</script>");
-});
+// Express
+var app = express();
 
-// Listen on port 8000, IP defaults to 127.0.0.1
-server.listen(8080);
+app.use(express.static(__dirname + '/public'));
+
+app.set('superSecret', config.sessionSecret); // secret variable
+
+//use body parser so we can get info from POST and/or URL parameters
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// Routes
+app.use('/api', require('./routes/api'));
+
+// Start server
+
+var port = config.server_port || 8080
+, ip = config.server_ip || "127.0.0.1";
+
+
+var server = http.createServer(app);
+server.listen(port, function() {
+  console.log('Server running on ' + ip+":"+port);
+});

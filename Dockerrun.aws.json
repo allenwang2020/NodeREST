@@ -18,7 +18,7 @@
 	  "containerDefinitions": [
 	    {
 	      "name": "node-web",
-	      "image": "node:4.4.7",
+	      "image": "node:4.4.2",
 	      "essential": true,
 	      "memory": 128,
 	      "portMappings": [

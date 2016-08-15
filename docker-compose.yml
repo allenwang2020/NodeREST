@@ -3,8 +3,8 @@
      ports:
        - 8080:8080
      links:
-       - db 
-   db:  
+       - db-mongo 
+   db-mongo:  
      image: mongo
      ports:
        - 27017:27017
