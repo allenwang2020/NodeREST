@@ -10,4 +10,4 @@ WORKDIR /NodeREST
 ADD . /NodeREST  
 RUN npm install
 CMD npm start
-CMD sudo docker build -t node-db -f Dockerfile.mongodb . 
+CMD docker build -t node-db -f Dockerfile.mongodb . 
