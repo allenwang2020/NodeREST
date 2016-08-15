@@ -17,9 +17,9 @@ dependencies:
    override:      
 # 建構方式使用 docker build      
    #-  docker info
-   #- docker build -t node-web -f Dockerfile.web . 
-   #- docker build -t node-db -f Dockerfile.db .  
-   - docker-compose up -d
+   - docker build -t node-web -f Dockerfile.web . 
+   - docker build -t node-mongodb -f Dockerfile.mongodb .  
+   # - docker-compose up -d
    - docker ps
          
 test:    
@@ -34,8 +34,8 @@ deployment:
    development:
     branch: develop 
     commands:
-     - eb deploy NodeREST-env-development  
+     - eb deploy NodeREST-Development  
    production:      
     branch: master      
     commands:
-     - eb deploy NodeREST-env-production  
+     - eb deploy NodeREST-Production  
