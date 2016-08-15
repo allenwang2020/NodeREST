@@ -24,12 +24,37 @@
 	        "/bin/bash",
 	        "/usr/src/app/run_node.sh"
 	      ],
+	      "links": 
+	        [
+	         "mongodb"
+	        ],
 	      "mountPoints": [
 	        {
 	          "sourceVolume": "node-web",
 	          "containerPath": "/usr/src/app"
 	        }
 	      ]
-	    }
+	    },
+        {
+            "name": "mongodb",
+            "image": "mongo",
+            "memory": 1024,
+            "essential": true,
+            "portMappings": 
+            [
+                {
+                    "hostPort": 27017,
+                    "containerPort": 27017
+                }
+            ],
+            "mountPoints": 
+            [
+                {
+                    "sourceVolume": "mongodb-data",
+                    "containerPath": "/data/db",
+                    "readOnly": false
+                }
+            ]
+        }
 	  ]
 }
