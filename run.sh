@@ -1,3 +1,3 @@
 #!/bin/bash
-/usr/src/app/staging
+cd /usr/src/app/staging
 npm start
