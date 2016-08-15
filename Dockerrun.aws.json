@@ -29,7 +29,7 @@
 	      ],
 	      "command": [
 	        "/bin/bash",
-	        "/usr/src/app/run.sh"
+	        "/usr/src/app/staging/run.sh"
 	      ],
 	      "links": 
 	        [
@@ -38,7 +38,7 @@
 	      "mountPoints": [
 	        {
 	          "sourceVolume": "node-web",
-	          "containerPath": "/usr/src/app"
+	          "containerPath": "/usr/src/app/staging"
 	        }
 	      ]
 	    },
