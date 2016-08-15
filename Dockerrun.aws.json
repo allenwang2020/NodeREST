@@ -6,13 +6,7 @@
 	      "host": {
 	        "sourcePath": "/var/app/current"
 	      }
-	    },
-	    {
-	      "name": "node-db",
-	      "host": {
-		     "sourcePath": "/var/app/mongodb"
-		   }
-		}
+	    }
 	  ],
 	  "containerDefinitions": [
 	    {
@@ -27,31 +21,12 @@
 	        }
 	      ],
 	      "command": [
-	        "/bin/bash",
-	        "/usr/src/app/run.sh"
+	        "npm start"
 	      ],
 	      "mountPoints": [
 	        {
 	          "sourceVolume": "node-web",
 	          "containerPath": "/usr/src/app"
-	        }
-	      ]
-	    },
-	    {
-	      "name": "mongodb",
-	      "image": "mongo",
-	      "essential": true,
-	      "memory": 256,
-	      "portMappings": [
-	        {
-	          "hostPort": 27017,
-	          "containerPort": 27017
-	        }
-	      ],
-	      "mountPoints": [
-	        {
-	          "sourceVolume": "node-db",
-	          "containerPath": "/etc/mongodb"
 	        }
 	      ]
 	    }
