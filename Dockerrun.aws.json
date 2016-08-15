@@ -33,7 +33,7 @@
 	      ],
 	      "links": 
 	        [
-	         "mongodb"
+	         "db-mongo"
 	        ],
 	      "mountPoints": [
 	        {
@@ -43,7 +43,7 @@
 	      ]
 	    },
         {
-            "name": "mongodb",
+            "name": "db-mongo",
             "image": "mongo",
             "memory": 128,
             "essential": true,
@@ -58,7 +58,7 @@
             [
                 {
                     "sourceVolume": "mongodb-data",
-                    "containerPath": "/data/db",
+                    "containerPath": "/data/db/mongo/products-demo",
                     "readOnly": false
                 }
             ]
