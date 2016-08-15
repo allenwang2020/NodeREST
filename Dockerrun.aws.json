@@ -27,10 +27,6 @@
 	          "containerPort": 8080
 	        }
 	      ],
-	      "command": [
-	        "/bin/bash",
-	        "/usr/src/app/run.sh"
-	      ],
 	      "links": 
 	        [
 	         "mongodb"
