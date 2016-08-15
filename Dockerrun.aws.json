@@ -21,7 +21,8 @@
 	        }
 	      ],
 	      "command": [
-	        "npm start"
+	        "/bin/bash",
+	        "/usr/src/app/run_node.sh"
 	      ],
 	      "mountPoints": [
 	        {
