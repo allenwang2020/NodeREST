@@ -1,4 +1,3 @@
 #!/bin/bash
-cd /usr/src/app/staging
-npm install
+/usr/src/app/staging
 npm start
