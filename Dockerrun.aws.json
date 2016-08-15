@@ -45,7 +45,7 @@
         {
             "name": "mongodb",
             "image": "mongo",
-            "memory": 1024,
+            "memory": 128,
             "essential": true,
             "portMappings": 
             [
