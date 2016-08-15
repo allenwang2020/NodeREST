@@ -1,6 +1,10 @@
 // Load the http module to create an http server.
 var http = require('http');
 
+//MongoDB
+var Mongoose = require('./config/mongoose');
+var db =  new Mongoose();
+
 // Configure our HTTP server to respond with Hello World to all requests.
 var server = http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "text/html"});
