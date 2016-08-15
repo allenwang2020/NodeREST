@@ -6,12 +6,6 @@
 	      "host": {
 	        "sourcePath": "/var/app/current"
 	      }
-	    },
-	    
-	      "name": "mongodb-data",
-	      "host": {
-	        "sourcePath": "/var/app/current/mongodb-data"
-	      }
 	    }
 	  ],
 	  "containerDefinitions": [
@@ -56,7 +50,7 @@
             "mountPoints": 
             [
                 {
-                    "sourceVolume": "mongodb-data",
+                    "hostPath": "/var/app/current/mongodb-data",
                     "containerPath": "/data/db",
                     "readOnly": false
                 }
