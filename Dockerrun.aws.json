@@ -11,7 +11,7 @@
 	    
 	      "name": "mongodb-data",
 	      "host": {
-	        "sourcePath": "/var/db/mongo/products-demo"
+	        "sourcePath": "/var/app/db/mongo/products-demo"
 	      }
 	    }
 	  ],
