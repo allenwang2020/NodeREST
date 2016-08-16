@@ -27,7 +27,7 @@ app.use('/api', require('./routes/api'));
 
 // Start server
 
-var port = config.server_port || 8080
+var port = config.server_port || 3000
 , ip = config.server_ip || "127.0.0.1";
 
 

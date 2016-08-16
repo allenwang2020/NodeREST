@@ -1,5 +1,5 @@
 module.exports  = {
     sessionSecret : 'developmentSessionSecret',
     server_ip:'127.0.0.1',
-    server_port:'8080'	
+    server_port:'3000'	
 }

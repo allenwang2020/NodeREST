@@ -2,6 +2,12 @@
 	  "AWSEBDockerrunVersion": 2,
 	  "volumes": [
 	    {
+	      "name": "nginx-proxy-conf",
+	      "host": {
+	      "sourcePath": "/var/app/current/nginx/conf"
+	      }
+	    },           
+	    {
 	      "name": "node-web",
 	      "host": {
 	        "sourcePath": "/var/app/current"
@@ -16,6 +22,32 @@
 	    }
 	  ],
 	  "containerDefinitions": [
+		{
+		  "name": "nginx-proxy",
+		  "image": "nginx",
+		  "essential": true,
+		  "memory": 128,
+		  "portMappings": [
+		    {
+		      "hostPort": 80,
+		      "containerPort": 80
+		    }
+		  ],
+		  "links": [
+		    "node-web"
+		  ],
+		  "mountPoints": [
+		    {
+		      "sourceVolume": "nginx-proxy-conf",
+		      "containerPath": "/etc/nginx/conf.d",
+		      "readOnly": true
+		    },
+		    {
+		      "sourceVolume": "awseb-logs-nginx-proxy",
+		      "containerPath": "/var/log/nginx"
+		    }
+		  ]
+		},                                                  
 	    {
 	      "name": "node-web",
 	      "image": "node:4.4.2",
@@ -23,8 +55,8 @@
 	      "memory": 128,
 	      "portMappings": [
 	        {
-	          "hostPort": 80,
-	          "containerPort": 8080
+	          "hostPort": 3000,
+	          "containerPort": 3000
 	        }
 	      ],
 	      "command": [
