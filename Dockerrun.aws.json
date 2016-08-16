@@ -8,7 +8,7 @@
 	      }
 	    },           
 	    {
-	      "name": "node-web",
+	      "name": "web-node",
 	      "host": {
 	        "sourcePath": "/var/app/current"
 	      }
@@ -49,7 +49,7 @@
 		  ]
 		},                                                  
 	    {
-	      "name": "node-web",
+	      "name": "web-node",
 	      "image": "node:4.4.2",
 	      "essential": true,
 	      "memory": 128,
@@ -69,7 +69,7 @@
 	        ],
 	      "mountPoints": [
 	        {
-	          "sourceVolume": "node-web",
+	          "sourceVolume": "web-node",
 	          "containerPath": "/usr/src/app/staging"
 	        }
 	      ]
