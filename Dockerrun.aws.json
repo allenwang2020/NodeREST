@@ -11,7 +11,7 @@
 	    
 	      "name": "mongodb-data",
 	      "host": {
-	        "sourcePath": "/var/app/db/mongo/products-demo"
+	        "sourcePath": "/var/db/mongo"
 	      }
 	    }
 	  ],
@@ -58,7 +58,7 @@
             [
                 {
                     "sourceVolume": "mongodb-data",
-                    "containerPath": "/data/db/mongo/products-demo",
+                    "containerPath": "/data/db",
                     "readOnly": false
                 }
             ]
