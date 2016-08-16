@@ -1,7 +1,11 @@
-   web:
+   nginx:
+     build: nginx/
+     links: 
+       - web
+   web-node:
      build: .
      ports:
-       - 8080:8080
+       - 3000:3000
      links:
        - db-mongo 
    db-mongo:  
