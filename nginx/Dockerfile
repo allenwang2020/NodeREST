@@ -1,9 +1,18 @@
 #dockerfile for nginx
 FROM nginx
 
-# Adding the configuration files
-ADD conf/nginx.conf /etc/nginx
+# Remove the default Nginx configuration file
+RUN rm -v /etc/nginx/nginx.conf
 
-EXPOSE 80 443
+# Copy a configuration file from the current directory
+ADD conf/nginx.conf /etc/nginx/
 
-CMD ["nginx", "-g", "daemon off;"]
+# Append "daemon off;" to the beginning of the configuration
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+
+# Expose ports
+EXPOSE 80
+
+# Set the default command to execute
+# when creating a new container
+CMD service nginx start
