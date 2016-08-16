@@ -17,9 +17,9 @@ dependencies:
    override:      
 # 建構方式使用 docker build      
    #-  docker info
-   - docker build -t node-web -f Dockerfile.web . 
-   - docker build -t node-mongodb -f Dockerfile.mongodb .  
-   # - docker-compose up -d
+   #- docker build -t node-web -f Dockerfile.web . 
+   #- docker build -t node-mongodb -f Dockerfile.mongodb .  
+   - docker-compose up -d
    - docker ps
          
 test:    
