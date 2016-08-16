@@ -2,6 +2,6 @@
 FROM nginx
 
 # Adding the configuration files
-ADD conf/nginx.conf /etc/nginx/nginx.conf
+ADD conf/nginx.conf 
 
 CMD ["nginx"]
