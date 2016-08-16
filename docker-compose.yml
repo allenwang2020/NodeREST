@@ -2,6 +2,8 @@
      build: ./nginx
      links: 
        - web-node
+     ports:
+       - "80:80"
    web-node:
      build: .
      ports:
