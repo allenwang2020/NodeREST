@@ -2,6 +2,8 @@
 FROM nginx
 
 # Adding the configuration files
-ADD conf/nginx.conf 
+ADD conf/nginx.conf /etc/nginx
 
-CMD ["nginx"]
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]
