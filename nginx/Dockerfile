@@ -10,10 +10,10 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   mkdir ~/sources && \
   cd ~/sources && \
-  wget http://nginx.org/download/nginx-1.6.2.tar.gz && \
-  tar -zxvf nginx-1.6.2.tar.gz && \
+  wget http://nginx.org/download/nginx-1.11.3.tar.gz && \
+  tar -zxvf nginx-1.11.3.tar.gz && \
   git clone https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng.git && \
-  cd nginx-1.6.2 && \
+  cd nginx-1.11.3 && \
   ./configure \
     --prefix=/etc/nginx \
     --conf-path=/etc/nginx/nginx.conf \
