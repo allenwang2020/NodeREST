@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER allen allenwang2020@gmail.com
 
 
-# Install Nginx.
+RUN apt-get update
 RUN \
   add-apt-repository -y ppa:nginx/stable && \
   apt-get update && \
@@ -35,6 +35,7 @@ VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/v
 
 # Define working directory.
 WORKDIR /etc/nginx
+
 
 ADD conf/nginx.conf /etc/nginx/conf.d/nginx.conf
 
