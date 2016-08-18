@@ -4,10 +4,10 @@ FROM node:4.4.2
 # 開放 container 的 3000 port  
 EXPOSE 3000
  # 設定 container 的預設目錄位置  
-WORKDIR /NodeREST    
+WORKDIR /web    
 # 將專案根目錄的檔案加入至 container  
 # 安裝 npm package  
-ADD . /NodeREST  
+ADD ./web /web  
 RUN npm install
 CMD npm start
 

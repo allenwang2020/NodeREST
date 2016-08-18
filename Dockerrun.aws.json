@@ -10,7 +10,7 @@
 	    {
 	      "name": "web-node",
 	      "host": {
-	        "sourcePath": "/var/app/current"
+	        "sourcePath": "/var/app/current/web"
 	      }
 	    },
 	    {

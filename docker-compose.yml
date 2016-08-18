@@ -5,7 +5,7 @@
      ports:
        - "80:80"
    web-node:
-     build: .
+     build: ./web
      ports:
        - 3000:3000
      links:
