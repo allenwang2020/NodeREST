@@ -2,11 +2,11 @@
 	var http = require('http');
 	var express = require('express');
 	var bodyParser = require('body-parser');
-	var config = require('./config/config');
+	var config = require('./conf/conf');
 
 
 	// MongoDB
-	var Mongoose = require('./config/mongoose');
+	var Mongoose = require('./conf/mongoose');
 	var db =  new Mongoose();
 
 	// Express

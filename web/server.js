@@ -1,8 +1,8 @@
 var cluster = require('cluster');
 var http = require('http');
 var numCPUs = require('os').cpus().length;
-var config = require('./web/config/config');
-var master = require('./web/master');
+var config = require('./conf/conf');
+var master = require('./master');
 
 if (cluster.isMaster) {
   // Fork启一个Worker 进程

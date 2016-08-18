@@ -7,7 +7,7 @@ EXPOSE 3000
 WORKDIR /web    
 # 將專案根目錄的檔案加入至 container  
 # 安裝 npm package  
-ADD ./web /web  
+ADD . /web  
 RUN npm install
 CMD npm start
 
