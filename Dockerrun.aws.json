@@ -14,6 +14,12 @@
 	      }
 	    },
 	    {
+	      "name": "mongo",
+	      "host": {
+	        "sourcePath": "/var/app/current/mongo"
+	      }
+		},
+	    {
 	    
 	      "name": "mongodb-data",
 	      "host": {
@@ -61,7 +67,7 @@
 	      ],
 	      "command": [
 	        "/bin/bash",
-	        "/usr/src/app/staging/run.sh"
+	        "/usr/src/app/staging/web/run.sh"
 	      ],
 	      "links": 
 	        [
@@ -70,7 +76,7 @@
 	      "mountPoints": [
 	        {
 	          "sourceVolume": "web-node",
-	          "containerPath": "/usr/src/app/staging"
+	          "containerPath": "/usr/src/app/staging/web"
 	        }
 	      ]
 	    },
@@ -84,12 +90,24 @@
                 {
                     "hostPort": 27017,
                     "containerPort": 27017
+                }, 
+                {
+                    "hostPort": 27018,
+                    "containerPort": 27018
+                },
+                {
+                    "hostPort": 27019,
+                    "containerPort": 27019
                 }
             ],
+            "command": [
+		        "/bin/bash",
+		        "/usr/src/app/staging/mongo/start.sh"
+		      ],
             "mountPoints": 
             [
                 {
-                    "sourceVolume": "mongodb-data",
+                    "sourceVolume": "mongo",
                     "containerPath": "/data/db",
                     "readOnly": false
                 }

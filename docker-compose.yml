@@ -11,9 +11,11 @@
      links:
        - db-mongo 
    db-mongo:  
-     image: mongo
+     build: ./mongo
      ports:
        - 27017:27017
+       - 27018:27018
+       - 27019:27019
      volumes:
        - /data/db/mongo/products-demo:/data/db/mongo/products-demo
 
