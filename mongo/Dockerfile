@@ -16,8 +16,10 @@ ENV AUTH yes
 ENV STORAGE_ENGINE wiredTiger
 ENV JOURNALING yes
 
+
 ADD set_mongodb_password.sh /set_mongodb_password.sh
 ADD run.sh /run.sh
+RUN chmod +x /run.sh
 
 
 EXPOSE 27017 28017
