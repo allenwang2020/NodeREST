@@ -13,7 +13,7 @@
    db-mongo:  
      build: ./mongo
      environment:
-       MONGODB_PASS: "**ChangeMe**"
+       MONGODB_PASS: "12345"
      ports:
        - 27017:27017  
        - 27018:27017  
