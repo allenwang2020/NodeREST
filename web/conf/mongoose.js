@@ -3,7 +3,7 @@ var options = {
 		  db: { native_parser: true },
 		  server: { poolSize: 5 },
 		  user: 'admin',
-		  pass: '**ChangeMe**'
+		  pass: '12345'
 		};
 	
 mongoose.Promise = global.Promise;

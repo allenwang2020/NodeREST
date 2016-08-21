@@ -13,9 +13,9 @@
    db-mongo:  
      build: ./mongo
      environment:
-       MONGODB_PASS: "**ChangeMe**"
+       MONGODB_PASS: 12345
      ports:
        - 27017:27017  
        - 28017:28017  
      volumes:
-       - /data/db/mongo/products-demo:/data/db/mongo/products-demo
+       - /data/db/mongo/products-demo:/data/db
