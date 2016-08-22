@@ -23,9 +23,8 @@ dependencies:
    - docker ps
          
 test:    
-    override:
-        - cd /usr/src/app/staging/web      
-        - npm test
+    override:      
+        #- npm test
         #- ./node_modules/.bin/mocha      
         # 使用 curl 測試 docker 是否有順利執行 node   
         #- docker run -d -p 3000:3000 hello-ci-workflow; sleep 10        
