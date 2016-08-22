@@ -102,7 +102,7 @@
             ],
             "command": [
 		        "/bin/bash",
-		        "/usr/src/app/staging/mongo/start.sh"
+		        "/usr/src/app/staging/mongo/run.sh"
 		      ],
             "mountPoints": 
             [
