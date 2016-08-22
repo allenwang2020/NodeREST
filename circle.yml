@@ -23,7 +23,8 @@ dependencies:
    - docker ps
          
 test:    
-    override:      
+    override:
+        - cd /usr/src/app/staging/web      
         - npm test
         #- ./node_modules/.bin/mocha      
         # 使用 curl 測試 docker 是否有順利執行 node   
