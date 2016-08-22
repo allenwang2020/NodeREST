@@ -4,8 +4,7 @@
   "description": "A simple RESTFul API created using nodejs that talks to Mongodb database",
   "main": "server.js",
   "scripts": {
-	    "start": "node ./web/server.js",
-	    "test" : "node ./web/server.js"
+	    "start": "node server.js"
 	  },
   "author": "allen",
   "license": "ISC",
