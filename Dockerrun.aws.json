@@ -10,7 +10,28 @@
 	    }
 	  ],
 	  "containerDefinitions": [
-		                                                  
+	  {
+		  "name": "nginx-proxy",
+		  "image": "nginx",
+		  "essential": true,
+		  "memory": 128,
+		  "portMappings": [
+		    {
+		      "hostPort": 80,
+		      "containerPort": 80
+		    }
+		  ],
+		  "links": [
+		    "web-node"
+		  ],
+		  "mountPoints": [
+		    {
+		      "sourceVolume": "nginx-proxy-conf",
+		      "containerPath": "/etc/nginx",
+		      "readOnly": true
+		    }
+		  ]
+	    },                                                   
 	    {
 	      "name": "web-node",
 	      "image": "node:4.4.2",
