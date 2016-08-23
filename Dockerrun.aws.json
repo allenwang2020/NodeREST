@@ -4,7 +4,7 @@
 		{
 		    "name": "nginx-proxy",
 		    "host": {
-		    "sourcePath": "/var/app/current/nginx/conf"
+		    "sourcePath": "/var/app/current/nginx"
 		    }
 		  },   
 	    {
@@ -80,7 +80,7 @@
                     "hostPort": 27017,
                     "containerPort": 27017
                 }
-            ]
+            ],
             "mountPoints": 
             [
                 {
