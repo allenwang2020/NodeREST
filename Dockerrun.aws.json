@@ -1,24 +1,13 @@
 {
 	  "AWSEBDockerrunVersion": 2,
 	  "volumes": [
-	    {
-	      "name": "nginx-proxy-conf",
-	      "host": {
-	      "sourcePath": "/var/app/current/nginx"
-	      }
-	    },           
+	             
 	    {
 	      "name": "web-node",
 	      "host": {
 	        "sourcePath": "/var/app/current/web"
 	      }
-	    },
-	    {
-	      "name": "mongo",
-	      "host": {
-	        "sourcePath": "/var/app/current/mongo"
-	      }
-		}
+	    }
 	  ],
 	  "containerDefinitions": [
 		                                                  
@@ -37,45 +26,12 @@
 	        "/bin/bash",
 	        "/usr/src/app/staging/web/run.sh"
 	      ],
-	      "links": 
-	        [
-	         "db-mongo"
-	        ],
 	      "mountPoints": [
 	        {
 	          "sourceVolume": "web-node",
 	          "containerPath": "/usr/src/app/staging/web"
 	        }
 	      ]
-	    },
-        {
-            "name": "db-mongo",
-            "image": "mongo",
-            "memory": 128,
-            "essential": true,
-            "portMappings": 
-            [
-                {
-                    "hostPort": 27017,
-                    "containerPort": 27017
-                }, 
-                {
-                    "hostPort": 28017,
-                    "containerPort": 28017
-                }
-            ],
-            "command": [
-		        "/bin/bash",
-		        "/usr/src/app/staging/mongo/run.sh"
-		      ],
-            "mountPoints": 
-            [
-                {
-                    "sourceVolume": "mongo",
-                    "containerPath": "/data/db",
-                    "readOnly": false
-                }
-            ]
-        }
+	    }
 	  ]
 }
