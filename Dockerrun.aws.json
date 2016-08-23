@@ -58,37 +58,12 @@
 	        "/bin/bash",
 	        "/usr/src/app/staging/web/run.sh"
 	      ],
-	      "links": 
-	        [
-	         "db-mongo"
-	        ],
 	      "mountPoints": [
 	        {
 	          "sourceVolume": "web-node",
 	          "containerPath": "/usr/src/app/staging/web"
 	        }
 	      ]
-	    },
-        {
-            "name": "db-mongo",
-            "image": "mongo",
-            "memory": 128,
-            "essential": true,
-            "portMappings": 
-            [
-                {
-                    "hostPort": 27017,
-                    "containerPort": 27017
-                }
-            ],
-            "mountPoints": 
-            [
-                {
-                    "sourceVolume": "build-mongo",
-                    "containerPath": "/data/db",
-                    "readOnly": false
-                }
-            ]
-        }
+	    }
 	  ]
 }
