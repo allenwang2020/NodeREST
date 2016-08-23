@@ -31,4 +31,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 CMD ["service", "mongodb" "stop"]
 
 
-CMD ["/run.sh"]
+CMD ["/entrypoint.sh"]

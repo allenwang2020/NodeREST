@@ -16,7 +16,7 @@
 	    {
 	      "name": "build-mongo",
 	      "host": {
-	        "sourcePath": "/var/app/db/mongo/products-demo"
+	        "sourcePath": "/var/app/current/mongo"
 	      }
 		}
 	  ],
