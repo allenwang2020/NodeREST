@@ -25,4 +25,6 @@ RUN chmod +x /set_mongodb_password.sh
 
 EXPOSE 27017 28017
 
+CMD ["service", "mongodb" "stop"]
+
 CMD ["/run.sh"]
