@@ -74,6 +74,13 @@
             "image": "mongo",
             "memory": 128,
             "essential": true,
+            "portMappings": 
+            [
+                {
+                    "hostPort": 27017,
+                    "containerPort": 27017
+                }
+            ],
             "mountPoints": 
             [
                 {
