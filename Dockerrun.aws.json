@@ -16,14 +16,14 @@
 	    {
 	      "name": "build-mongo",
 	      "host": {
-	        "sourcePath": "/var/app/current/mongo"
+	        "sourcePath": "/var/app/db/mongo/products-demo"
 	      }
 		}
 	  ],
 	  "containerDefinitions": [
 	    {
 		  "name": "nginx-proxy",
-		  "image": "/nginx",
+		  "image": "nginx",
 		  "essential": true,
 		  "memory": 128,
 		  "portMappings": [
@@ -45,7 +45,7 @@
 	    },                                                   
 	    {
 	      "name": "web-node",
-	      "image": "/web",
+	      "image": "node:4.4.2",
 	      "essential": true,
 	      "memory": 128,
 	      "portMappings": [
@@ -71,7 +71,7 @@
 	    },
         {
             "name": "db-mongo",
-            "image": "/mongo",
+            "image": "mongo",
             "memory": 128,
             "essential": true,
             "portMappings": 
