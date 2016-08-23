@@ -71,7 +71,7 @@
 	    },
         {
             "name": "db-mongo",
-            "image": "mongo",
+            "build": "./mongo",
             "memory": 128,
             "essential": true,
             "portMappings": 
