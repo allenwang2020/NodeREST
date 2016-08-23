@@ -14,7 +14,7 @@
 	      }
 	    },
 	    {
-	      "name": "mongo",
+	      "name": "build-mongo",
 	      "host": {
 	        "sourcePath": "/var/app/current/mongo"
 	      }
@@ -74,17 +74,10 @@
             "image": "mongo",
             "memory": 128,
             "essential": true,
-            "portMappings": 
-            [
-                {
-                    "hostPort": 27017,
-                    "containerPort": 27017
-                }
-            ],
             "mountPoints": 
             [
                 {
-                    "sourceVolume": "mongo",
+                    "sourceVolume": "build-mongo",
                     "containerPath": "/data/db",
                     "readOnly": false
                 }
