@@ -54,6 +54,10 @@
 	          "containerPort": 3000
 	        }
 	      ],
+	      "command": [
+	        "/bin/bash",
+	        "/usr/src/app/staging/web/run.sh"
+	      ],
 	      "links": 
 	        [
 	         "db-mongo"
