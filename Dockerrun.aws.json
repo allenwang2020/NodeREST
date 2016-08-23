@@ -81,10 +81,6 @@
                     "containerPort": 27017
                 }
             ],
-	  	      "command": [
-	  	        "/bin/bash",
-	  	        "/usr/src/app/staging/web/run.sh"
-	  	      ],
             "mountPoints": 
             [
                 {
