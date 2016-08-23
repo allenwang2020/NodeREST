@@ -44,7 +44,7 @@
 		  "mountPoints": [
 		    {
 		      "sourceVolume": "nginx-proxy-conf",
-		      "containerPath": "/etc/nginx",
+		      "containerPath": "/etc/nginx/conf.d",
 		      "readOnly": true
 		    }
 		  ]
