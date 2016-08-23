@@ -68,7 +68,7 @@
 	          "containerPath": "/usr/src/app/staging/web"
 	        }
 	      ]
-	    }},
+	    },
         {
             "name": "db-mongo",
             "image": "mongo",
