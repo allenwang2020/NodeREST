@@ -21,7 +21,7 @@
 		}
 	  ],
 	  "containerDefinitions": [
-	  {
+	    
         {
             "name": "db-mongo",
             "image": "mongo",
