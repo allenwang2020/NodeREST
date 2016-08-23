@@ -23,7 +23,7 @@
 	  "containerDefinitions": [
 	    {
 		  "name": "nginx-proxy",
-		  "image": "NodeREST/nginx",
+		  "image": "/nginx",
 		  "essential": true,
 		  "memory": 128,
 		  "portMappings": [
@@ -45,7 +45,7 @@
 	    },                                                   
 	    {
 	      "name": "web-node",
-	      "image": "NodeREST/web",
+	      "image": "/web",
 	      "essential": true,
 	      "memory": 128,
 	      "portMappings": [
@@ -71,7 +71,7 @@
 	    },
         {
             "name": "db-mongo",
-            "image": "NodeREST/mongo",
+            "image": "/mongo",
             "memory": 128,
             "essential": true,
             "portMappings": 
