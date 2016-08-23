@@ -1,4 +1,6 @@
 #!/bin/bash
+
+sudo service mongodb stop
 set -m
 
 mongodb_cmd="mongod --storageEngine $STORAGE_ENGINE"
