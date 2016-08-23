@@ -18,13 +18,7 @@
 	      "host": {
 	        "sourcePath": "/var/app/current/mongo"
 	      }
-		},
-	    {
-	      "name": "mongodb-data",
-	      "host": {
-	        "sourcePath": "/var/db/mongo/products-demo"
-	      }
-	    }
+		}
 	  ],
 	  "containerDefinitions": [
 		{
@@ -48,6 +42,61 @@
 		      "readOnly": true
 		    }
 		  ]
-		}
+		},                                                  
+	    {
+	      "name": "web-node",
+	      "image": "node:4.4.2",
+	      "essential": true,
+	      "memory": 128,
+	      "portMappings": [
+	        {
+	          "hostPort": 3000,
+	          "containerPort": 3000
+	        }
+	      ],
+	      "command": [
+	        "/bin/bash",
+	        "/usr/src/app/staging/web/run.sh"
+	      ],
+	      "links": 
+	        [
+	         "db-mongo"
+	        ],
+	      "mountPoints": [
+	        {
+	          "sourceVolume": "web-node",
+	          "containerPath": "/usr/src/app/staging/web"
+	        }
+	      ]
+	    },
+        {
+            "name": "db-mongo",
+            "image": "mongo",
+            "memory": 128,
+            "essential": true,
+            "portMappings": 
+            [
+                {
+                    "hostPort": 27017,
+                    "containerPort": 27017
+                }, 
+                {
+                    "hostPort": 28017,
+                    "containerPort": 28017
+                }
+            ],
+            "command": [
+		        "/bin/bash",
+		        "/usr/src/app/staging/mongo/run.sh"
+		      ],
+            "mountPoints": 
+            [
+                {
+                    "sourceVolume": "mongo",
+                    "containerPath": "/data/db",
+                    "readOnly": false
+                }
+            ]
+        }
 	  ]
 }
