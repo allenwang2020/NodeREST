@@ -79,10 +79,6 @@
                 {
                     "hostPort": 27017,
                     "containerPort": 27017
-                }, 
-                {
-                    "hostPort": 28017,
-                    "containerPort": 28017
                 }
             ],
             "command": [
