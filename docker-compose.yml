@@ -19,3 +19,7 @@
        - 28017:28017  
      volumes:
        - /data/db/mongo/products-demo:/data/db
+   memcached:
+     build: ./memcached
+     ports:
+       - 11211:11211
