@@ -72,6 +72,13 @@
         {
             "name": "db-mongo",
             "image": "mongo",
+            "environment": 
+	    	  [
+	            {
+	              "name": "MONGODB_PASS",
+	              "value": "12345"
+	            }
+	          ],
             "memory": 128,
             "essential": true,
             "portMappings": 
