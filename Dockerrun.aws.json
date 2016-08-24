@@ -88,7 +88,7 @@
                     "containerPort": 27017
                 }
             ],
-            command": [
+            "command": [
 	        "/bin/bash",
 	        "/usr/src/app/staging/mongo/entrypoint.sh"
 	        ],
