@@ -10,6 +10,7 @@ FROM ubuntu:14.04
 MAINTAINER allen wang <allenwang2020@gmail.com> 
 
 # Install Memcached
+RUN apt-get update
 RUN apt-get install -y memcached
 
 # Port to expose (default: 11211)
