@@ -88,10 +88,6 @@
                     "containerPort": 27017
                 }
             ],
-            "command": [
-	        "/bin/bash",
-	        "/data/db/entrypoint.sh"
-	        ],
             "mountPoints": 
             [
                 {
