@@ -90,7 +90,7 @@
             ],
             "command": [
 	        "/bin/bash",
-	        "/usr/src/app/staging/mongo/entrypoint.sh"
+	        "/data/db/entrypoint.sh"
 	        ],
             "mountPoints": 
             [
