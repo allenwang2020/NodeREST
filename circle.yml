@@ -8,7 +8,7 @@ machine:
        - docker    
     post:
        - sudo service mongodb stop   
-       - sudo service redis stop
+       - sudo stop redis
 dependencies:  
    pre:
     # 安裝 eb
