@@ -71,7 +71,7 @@
 	    },
         {
             "name": "db-mongo",
-            "image": "mongo",
+            "image": "allenwang2020/noderest:mongo",
             "environment": 
 	    	  [
 	            {
