@@ -13,8 +13,8 @@ MAINTAINER allen wang <allenwang2020@gmail.com>
 RUN apt-get update
 RUN apt-get install -y memcached
 
-# Port to expose (default: 11211)
-EXPOSE 11211
+# Port to expose (default: 11212)
+EXPOSE 11212
 
 # Set the user to run Memcached daemon
 USER daemon

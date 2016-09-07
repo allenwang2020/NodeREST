@@ -22,7 +22,7 @@
    memcached:
      build: ./memcached
      ports:
-       - 11211:11211
+       - 11212:11212
    redis:
      build: ./redis
      ports:
