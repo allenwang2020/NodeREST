@@ -21,31 +21,7 @@
 		}
 	  ],
 	  "containerDefinitions": [
-	    {
-		  "name": "nginx-proxy",
-		  "image": "allenwang2020/noderest:nginx",
-		  "essential": true,
-		  "memory": 128,
-		  "portMappings": [
-		    {
-		      "hostPort": 80,
-		      "containerPort": 80
-		    }
-		  ],
-		  "links": [
-		    "web-node"
-		  ],
-		  "mountPoints": [
-		    {
-		      "sourceVolume": "nginx-proxy",
-		      "containerPath": "/etc/nginx/conf.d",
-	          "readOnly": true
-		    }
-		  ],
-	      "entryPoint": [
-	          "nginx", "-g", "daemon off;"
-	      ]
-	    },                                                   
+	                                                       
 	    {
 	      "name": "web-node",
 	      "image": "allenwang2020/noderest:node",
@@ -99,6 +75,34 @@
                     "readOnly": false
                 }
             ]
-        }
+        },{
+		  "name": "nginx-proxy",
+		  "image": "allenwang2020/noderest:nginx",
+		  "essential": true,
+		  "memory": 128,
+		  "portMappings": [
+		    {
+		      "hostPort": 80,
+		      "containerPort": 80
+		    },
+	        {
+		      "hostPort": 443,
+		      "containerPort": 443
+		    }
+		  ],
+		  "links": [
+		    "web-node"
+		  ],
+		  "mountPoints": [
+		    {
+		      "sourceVolume": "nginx-proxy",
+		      "containerPath": "/etc/nginx/conf.d",
+	          "readOnly": true
+		    }
+		  ],
+	      "entryPoint": [
+	          "nginx", "-g", "daemon off;"
+	      ]
+	    }
 	  ]
 }
