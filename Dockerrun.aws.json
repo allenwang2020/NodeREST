@@ -23,7 +23,7 @@
 	  "containerDefinitions": [
 	    {
 		  "name": "nginx-proxy",
-		  "image": "nginx",
+		  "image": "allenwang2020/noderest:nginx",
 		  "essential": true,
 		  "memory": 128,
 		  "portMappings": [
@@ -45,7 +45,7 @@
 	    },                                                   
 	    {
 	      "name": "web-node",
-	      "image": "node:4.4.2",
+	      "image": "allenwang2020/noderest:node",
 	      "essential": true,
 	      "memory": 128,
 	      "portMappings": [
