@@ -4,15 +4,16 @@
   "description": "A simple RESTFul API created using nodejs that talks to Mongodb database",
   "main": "server.js",
   "scripts": {
-	    "start": "node server.js"
-	  },
+    "start": "node server.js"
+  },
   "author": "allen",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
     "mongoose": "^4.5.8",
-    "node-restful": "^0.2.5"
+    "node-restful": "^0.2.5",
+    "redis": "^2.6.2"
   },
   "devDependencies": {
     "mocha": "^3.0.2"
