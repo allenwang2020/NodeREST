@@ -45,7 +45,7 @@
 	    },                                                   
 	    {
 	      "name": "web-node",
-	      "image": "allenwang2020/noderest:node",
+	      "image": "node:4.4.2",
 	      "essential": true,
 	      "memory": 128,
 	      "portMappings": [
