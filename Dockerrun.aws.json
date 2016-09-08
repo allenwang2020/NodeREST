@@ -14,16 +14,16 @@
 	      }
 	    },
 	    {
-	      "name": "build-mongo",
+	      "name": "persistent-mongo",
 	      "host": {
-	        "sourcePath": "/var/app/current/mongo"
+	        "sourcePath": "/var/db/mongo"
 	      }
 		}
 	  ],
 	  "containerDefinitions": [
 	    {
 		  "name": "nginx-proxy",
-		  "image": "allenwang2020/noderest:nginx",
+		  "image": "nginx",
 		  "essential": true,
 		  "memory": 128,
 		  "portMappings": [
@@ -90,7 +90,7 @@
             "mountPoints": 
             [
                 {
-                    "sourceVolume": "build-mongo",
+                    "sourceVolume": "persistent-mongo",
                     "containerPath": "/data/db",
                     "readOnly": false
                 }
