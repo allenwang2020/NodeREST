@@ -77,7 +77,7 @@
             ]
         },{
 		  "name": "nginx-proxy",
-		  "image": "allenwang2020/noderest:nginx",
+		  "image": "nginx",
 		  "essential": true,
 		  "memory": 128,
 		  "portMappings": [
