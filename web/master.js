@@ -8,6 +8,7 @@
 	// MongoDB
 	var Mongoose = require('./conf/mongoose');
 	var db =  new Mongoose();
+	
 
 	// Express
 	var app = express();
