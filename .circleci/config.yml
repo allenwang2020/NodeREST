@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:9.2.0 //circleci包好的node-container
+      - image: circleci/node:9.2.0 //circleci包好的node-container,test
       - image: docker:17.05.0-ce-git // 包含git的container
     steps:
       - checkout
