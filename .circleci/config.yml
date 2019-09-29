@@ -1,4 +1,4 @@
-version: 2
+version:2
  jobs:
    build:
      docker:
@@ -10,7 +10,7 @@ version: 2
        - run: bundle exec htmlproofer ./_site --allow-hash-href --check-html --disable-external
        - run: echo "Build finished!"
 workflows:
-   version: 2
+   version:2
    deploy:
      jobs:
        - build
