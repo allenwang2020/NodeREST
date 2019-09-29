@@ -1,18 +1,18 @@
 version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/node:9.2.0 //circleci包好的node-container,test
-      - image: docker:17.05.0-ce-git // 包含git的container
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Testing
-          command: docker-compose -f docker-compose.yml run docker-cicd:
+ jobs:
+   build:
+     docker:
+       - image: circleci/node:9.2.0 //circleci包好的node-container,test
+       - image: docker:17.05.0-ce-git // 包含git的container
+     steps:
+       - checkout
+       - setup_remote_docker
+       - run:
+           name: Testing
+           command: docker-compose -f docker-compose.yml run docker-cicd:
 
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build
+ workflows:
+   version: 2
+   build-deploy:
+     jobs:
+       - build
