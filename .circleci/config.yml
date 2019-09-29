@@ -9,4 +9,4 @@ jobs:
       - setup_remote_docker
       - run:
           name: Testing
-          command: docker-compose -f docker-compose.yml run docker ps
+          command: docker-compose -f docker-compose.yml run docker-ci
