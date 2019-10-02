@@ -34,7 +34,8 @@ jobs:
           command: sudo eb deploy Noderest-env
 
 workflows: 
-  version: 2  
+  version: 2 
+  docker-cicd 
     jobs: 
       - build
       - deploy:
