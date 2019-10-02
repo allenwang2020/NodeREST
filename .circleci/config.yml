@@ -32,3 +32,12 @@ docker-cicd
       - deploy: 
           name: Deploy to AWS EB
           command: sudo eb deploy Noderest-env
+
+workflows: 
+  version: 2 
+  docker-cicd: 
+    jobs: 
+      - test
+      - deploy:
+          requires:
+            - build
