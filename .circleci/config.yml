@@ -21,9 +21,9 @@ jobs:
       - run:
           name: Install EB Command Line
           command: >
-             apt-get install python 2.7.9  && 
-             pip install --upgrade pip && 
-             pip install awsebcli 
+             sudo apt-get install python 2.7.9  && 
+             sudo pip install --upgrade pip && 
+             sudo pip install awsebcli 
       - run : eb init -p docker // 加上 eb init
       
       - deploy: 
