@@ -10,6 +10,7 @@ jobs:
       - run:
           name: Testing
           command: docker-compose up -d
+
 docker-cicd:
   deploy:
     docker:
