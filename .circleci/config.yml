@@ -12,7 +12,7 @@ jobs:
           command: docker-compose up -d
 
  deploy:
-    machine:true 
+    machine: true 
     steps:
       - checkout
       - run:
