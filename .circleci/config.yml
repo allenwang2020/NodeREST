@@ -20,7 +20,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Install EB Command Line
-          command: > 
+          command:> 
 	    sudo apt-get update &&
             sudo apt-get install -y python python-dev python-pip python-virtualenv &&
             sudo rm -rf /var/lib/apt/lists/* &&
