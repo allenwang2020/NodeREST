@@ -20,15 +20,10 @@ jobs:
       - setup_remote_docker
       - run:
           name: Install EB Command Line
-          command: >
-	    sudo apt-get update &&
-            sudo apt-get install -y python python-dev python-pip python-virtualenv &&
-            sudo rm -rf /var/lib/apt/lists/* &&
+          command:>
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
- 
-                 
-       - run : eb init -p docker // 加上 eb init
+      - run : eb init -p docker // 加上 eb init
       
       - deploy: 
           name: Deploy to AWS EB
