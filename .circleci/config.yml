@@ -35,7 +35,7 @@ jobs:
 
 workflows: 
   version: 2 
-  docker-cicd 
+  docker-cicd:
     jobs: 
       - build
       - deploy:
