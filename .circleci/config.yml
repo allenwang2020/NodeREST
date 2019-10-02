@@ -21,6 +21,9 @@ jobs:
       - run:
           name: Install EB Command Line
           command: >
+            sudo apt-get install python-pip python-dev build-essential && 
+            sudo pip install --upgrade pip &&
+            sudo pip install --upgrade virtualenv && 
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
       - run : eb init -p docker // 加上 eb init
