@@ -22,7 +22,7 @@ jobs:
           name: Install EB Command Line
           command: >
              sudo apt-get install python 2.7.9  &&
-	     sudo easy_install pip && 
+             sudo easy_install pip && 
              sudo pip install awsebcli &&
              sudo pip install --upgrade --user awsebcli 
       - run : eb init -p docker // 加上 eb init
