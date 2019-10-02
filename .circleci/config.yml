@@ -20,9 +20,9 @@ jobs:
       - setup_remote_docker
       - run:
           name: Install EB Command Line
-          command: >
-            sudo pip install awsebcli &&
-            sudo pip install --upgrade --user awsebcli
+          command: > 
+	    pip install --upgrade pip &&
+            pip install awsebcli
       - run : eb init -p docker // 加上 eb init
       
       - deploy: 
