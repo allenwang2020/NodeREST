@@ -26,7 +26,6 @@ jobs:
             sudo rm -rf /var/lib/apt/lists/* &&
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
-      - run : eb --version // 加上eb --version
       - run : eb init  // 加上 eb init
       
       - deploy: 
