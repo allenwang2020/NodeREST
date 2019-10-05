@@ -15,7 +15,7 @@ jobs:
     machine: true 
     steps:
       - checkout
-      - run:
+       - run:
           name: Install EB Command Line
           command: >
             sudo apt-get update &&
@@ -23,8 +23,13 @@ jobs:
             sudo rm -rf /var/lib/apt/lists/* &&
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
-      - run : eb init -p docker // 加上 eb init
-      
+      - run:
+          name: Setup EB Credentials
+          command: >
+            mkdir -p ~/.aws &&
+            echo [default] >> ~/.aws/credentials &&
+            echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials &&
+            echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials    
       - deploy: 
           name: Deploy to AWS EB
           command: sudo eb deploy Noderest-env
