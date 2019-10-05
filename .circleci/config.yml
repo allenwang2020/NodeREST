@@ -14,7 +14,7 @@ jobs:
     machine: true 
     steps:
        - checkout
-       -run:
+       - run:
           name: Install EB Command Line
           command: >
           sudo apt-get update &&
@@ -22,7 +22,7 @@ jobs:
           sudo rm -rf /var/lib/apt/lists/* &&
           sudo pip install awsebcli &&
           sudo pip install --upgrade --user awseblic
-       -run:
+       - run:
           name: Setup EB Credentials
           command: >
           mkdir -p ~/.aws &&
