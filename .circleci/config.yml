@@ -14,14 +14,7 @@ jobs:
     machine: true 
     steps:
        - checkout
-       - run:
-          name: Setup EB Credentials
-          command: >
-            mkdir -p ~/.aws &&
-            echo [default] >> ~/.aws/credentials &&
-            echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials &
-            echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials    
-      - deploy: 
+       - deploy: 
           name: Deploy to AWS EB
           command: sudo eb deploy Noderest-env
 
