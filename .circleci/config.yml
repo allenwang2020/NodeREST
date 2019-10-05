@@ -24,7 +24,7 @@ jobs:
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
       - run:
-          name: Setup EB Credentials
+           name: Setup EB Credentials
           command: >
             mkdir -p ~/.aws &&
             echo [default] >> ~/.aws/credentials &&
