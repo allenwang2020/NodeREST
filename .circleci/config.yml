@@ -10,7 +10,6 @@ jobs:
       - run:
           name: Testing
           command: docker-compose up -d
-
  deploy:
     machine: true 
     steps:
@@ -21,8 +20,8 @@ jobs:
             sudo apt-get update &&
             sudo apt-get install -y python python-dev python-pip python-virtualenv &&
             sudo rm -rf /var/lib/apt/lists/* &&
-            sudo pip install awsebcli && 
-            sudo pip install --upgrade --user awsebcli 
+            sudo pip install awsebcli &&
+            sudo pip install --upgrade --user awsebcli
       - run:
           name: Setup EB Credentials
           command: >
