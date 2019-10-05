@@ -31,7 +31,9 @@ jobs:
            echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
        - deploy: 
           name: Deploy to AWS EB
-          command: sudo eb deploy Noderest-env
+          command: >
+            sudo eb init -p Docker
+            sudo eb deploy Noderest-env
 
 workflows: 
   version: 2 
