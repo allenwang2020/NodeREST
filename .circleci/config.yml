@@ -32,12 +32,12 @@ jobs:
            echo [default] >> ~/.aws/credentials &&
            echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials &&
            echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials &&
-           echo aws_region=$AWS_DEFAULT_REGION >> ~/.aws/credentials
-           sudo eb init -p docker &&
-           echo [default] 
+           echo aws_region=$AWS_DEFAULT_REGION >> ~/.aws/credentials   
        - deploy: 
           name: Deploy to AWS EB
           command: >
+           sudo eb init -p docker &&
+           echo [default]
            sudo eb deploy nodeREST-env-1 
 workflows: 
   version: 2 
