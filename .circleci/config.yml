@@ -32,7 +32,7 @@ jobs:
        - deploy: 
           name: Deploy to AWS EB
           command: >
-            sudo eb init -p Docker
+            sudo eb init -p docker &&
             sudo eb deploy Noderest-env
 
 workflows: 
