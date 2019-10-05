@@ -35,10 +35,7 @@ jobs:
            echo aws_region=$AWS_DEFAULT_REGION >> ~/.aws/credentials   
        - deploy: 
           name: Deploy to AWS EB
-          command: >
-           sudo eb init -p docker &&
-           echo [default]
-           sudo eb deploy nodeREST-env-1 
+          command: sudo eb init -p docker 
 workflows: 
   version: 2 
   docker-cicd:
