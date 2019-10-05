@@ -26,6 +26,9 @@ jobs:
           name: Setup EB Credentials
           command: >
            mkdir -p ~/.aws &&
+           touch ~/.aws/config
+           chmod 600 ~/.aws/config
+           echo "[profile eb-cli]" > ~/.aws/config &&
            echo [default] >> ~/.aws/credentials &&
            echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials &&
            echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
@@ -33,7 +36,7 @@ jobs:
           name: Deploy to AWS EB
           command: >
             sudo eb init -p docker &&
-            sudo eb deploy Noderest-env
+            sudo eb deploy Noderest-env-1
 
 workflows: 
   version: 2 
