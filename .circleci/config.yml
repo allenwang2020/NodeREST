@@ -36,8 +36,8 @@ jobs:
           name: Deploy to AWS EB
           command: >
             sudo eb init -p docker &&
-            sudo eb deploy -v --staged --profile eb-cli
-      
+            sudo eb deploy nodeREST-env-1 --profile eb-cli --region
+      a
 
 workflows: 
   version: 2 
