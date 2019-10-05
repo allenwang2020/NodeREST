@@ -31,12 +31,13 @@ jobs:
            echo "[profile eb-cli]" > ~/.aws/config &&
            echo [default] >> ~/.aws/credentials &&
            echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials &&
-           echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
+           echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials &&
+           echo aws_region=$AWS_DEFAULT_REGION >> ~/.aws/credentials
        - deploy: 
           name: Deploy to AWS EB
           command: >
             sudo eb init -p docker &&
-            sudo eb deploy nodeREST-env-1 --profile eb-cli --region
+            sudo eb deploy nodeREST-env-1 --profile eb-cli
 workflows: 
   version: 2 
   docker-cicd:
