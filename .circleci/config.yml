@@ -21,7 +21,7 @@ jobs:
            sudo apt-get install -y python python-dev python-pip python-virtualenv &&
            sudo rm -rf /var/lib/apt/lists/* &&
            sudo pip install awsebcli==3.14.11 &&
-           sudo pip install --upgrade --user awseblic
+           sudo pip install --upgrade --user awsebcli
        - run:
           name: Setup EB Credentials
           command: >
