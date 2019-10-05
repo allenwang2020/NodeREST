@@ -28,14 +28,15 @@ jobs:
            mkdir -p ~/.aws &&
            touch ~/.aws/config
            chmod 600 ~/.aws/config
-           echo "[profile eb-cli]" > ~/.aws/config &&
-           echo [default] >> ~/.aws/credentials &&
-           echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials &&
-           echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials &&
-           echo aws_region=$AWS_DEFAULT_REGION >> ~/.aws/credentials   
+           echo "[profile eb-cli]" > ~/.aws/config 
+           echo "region=us-west-2" >> ~/.aws/config
+           echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+           echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
        - deploy: 
           name: Deploy to AWS EB
-          command: sudo eb init -p docker 
+          command: >
+           sudo eb use demo-prod --profile eb-cli
+           sudo eb deploy --profile eb-cli
 workflows: 
   version: 2 
   docker-cicd:
