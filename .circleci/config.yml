@@ -35,7 +35,7 @@ jobs:
        - deploy: 
           name: Deploy to AWS EB
           command: >
-           sudo eb use nodeREST-env-1 --profile eb-cli
+           sudo eb use nodeREST-env-1 --profile eb-cli &&
            sudo eb deploy --profile eb-cli
 workflows: 
   version: 2 
