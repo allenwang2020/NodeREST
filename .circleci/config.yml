@@ -25,14 +25,18 @@ jobs:
        - run:
           name: Setup EB Credentials
           command: >
-           mkdir -p ~/.aws &&
-           echo [default] >> ~/.aws/credentials &&
-           echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials &&
-           echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
+            mkdir ~/.aws
+            touch ~/.aws/config
+            chmod 600 ~/.aws/config
+            echo "[profile eb-cli]" > ~/.aws/config
+            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
        - deploy: 
           name: Deploy to AWS EB
           command: >
-             sudo eb deploy Noderest-env-1
+            sudo eb use Noderest-env-1 --profile eb-cli &&
+            sudo eb deploy -v --staged --profile eb-cli
+          
 workflows: 
   version: 2 
   docker-cicd:
