@@ -32,8 +32,7 @@ jobs:
        - deploy: 
           name: Deploy to AWS EB
           command: >
-           sudo eb init --region us-west-2 &&
-           sudo eb deploy Noderest-env-1
+             sudo eb deploy Noderest-env-1
 workflows: 
   version: 2 
   docker-cicd:
