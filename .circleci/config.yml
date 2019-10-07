@@ -33,8 +33,8 @@ jobs:
        - deploy: 
           name: Deploy to AWS EB
           command: >
-           sudo eb use nodeREST-env-1 &&
-           sudo eb deploy
+           sudo eb use nodeREST-env-1 --profile default &&
+           sudo eb deploy --profile default
 workflows: 
   version: 2 
   docker-cicd:
