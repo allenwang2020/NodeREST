@@ -24,7 +24,7 @@ RUN chmod +x /run.sh
 RUN chmod +x /set_mongodb_password.sh
 
 
-EXPOSE 27017 28017
+EXPOSE 27017 28017 29017
 
 ENTRYPOINT ["/run.sh"]
 
