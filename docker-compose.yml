@@ -1,13 +1,13 @@
-#   nginx:
-#     build: ./nginx
-#     links: 
-#       - web-node
-#     ports:
-#       - "80:80"
+   nginx:
+     build: ./nginx
+     links: 
+       - web-node
+     ports:
+       - "81:81"
    web-node:
      build: ./web
      ports:
-       - 80:80
+       - 3000:3000
      links:
        - db-mongo 
        - redis
