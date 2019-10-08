@@ -1,6 +1,6 @@
 #Dockerfile    
 # 從 [Docker Hub](https://hub.docker.com/) 安裝 Node.js image。  
-FROM node:4.4.2   
+FROM node:10   
 # 開放 container 的 3000 port  
 EXPOSE 3000
  # 設定 container 的預設目錄位置  
