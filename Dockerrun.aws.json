@@ -1,6 +1,12 @@
 {
 	  "AWSEBDockerrunVersion": 2,
 	  "volumes": [
+		{
+		    "name": "nginx-proxy",
+		    "host": {
+		    "sourcePath": "/var/app/current/nginx/conf"
+		    }
+		  },   
 	    {
 	      "name": "web-node",
 	      "host": {
@@ -23,13 +29,13 @@
 	      "memory": 128,
 	      "portMappings": [
 	        {
-	          "hostPort": 80,
-	          "containerPort": 80
+	          "hostPort": 3000,
+	          "containerPort": 3000
 	        }
 	      ],
 	      "command": [
 	        "/bin/bash",
-	        "/var/app/current/web/run.sh"
+	        "/usr/src/app/staging/web/run.sh"
 	      ],
 	      "links": 
 	        [
@@ -39,7 +45,7 @@
 	      "mountPoints": [
 	        {
 	          "sourceVolume": "web-node",
-	          "containerPath": "/var/app/current/web"
+	          "containerPath": "/usr/src/app/staging/web"
 	        }
 	      ]
 	    },
@@ -83,6 +89,35 @@
                 "containerPort": 6378
             }
            ]
-        }
+        },
+        {
+		  "name": "nginx-proxy",
+		  "image": "nginx",
+		  "essential": true,
+		  "memory": 128,
+		  "portMappings": [
+		    {
+		      "hostPort": 80,
+		      "containerPort": 80
+		    },
+	        {
+		      "hostPort": 443,
+		      "containerPort": 443
+		    }
+		  ],
+		  "links": [
+		    "web-node"
+		  ],
+		  "mountPoints": [
+		    {
+		      "sourceVolume": "nginx-proxy",
+		      "containerPath": "/etc/nginx/conf.d",
+	          "readOnly": true
+		    }
+		  ],
+	      "entryPoint": [
+	          "nginx", "-g", "daemon off;"
+	      ]
+	    }
 	  ]
 }
