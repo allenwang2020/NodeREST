@@ -14,9 +14,9 @@
 	      }
 	    },
 	    {
-	      "name": "persistent-mongo",
+	      "name": "persistent-mongo-db001",
 	      "host": {
-	        "sourcePath": "/var/db/mongo"
+	        "sourcePath": "/var/db/mongo/db-001"
 	      }
 		}
 	  ],
@@ -35,7 +35,7 @@
 	      ],
 	      "command": [
 	        "/bin/bash",
-	        "/usr/src/app/staging/web/run.sh"
+	        "/var/app/current/web/run.sh"
 	      ],
 	      "links": 
 	        [
@@ -45,7 +45,7 @@
 	      "mountPoints": [
 	        {
 	          "sourceVolume": "web-node",
-	          "containerPath": "/usr/src/app/staging/web"
+	          "containerPath": "/var/app/current/web"
 	        }
 	      ]
 	    },
@@ -71,8 +71,8 @@
             "mountPoints": 
             [
                 {
-                    "sourceVolume": "persistent-mongo",
-                    "containerPath": "/data/db",
+                    "sourceVolume": "persistent-mongo-db001",
+                    "containerPath": "/var/db/mongo/db-001",
                     "readOnly": false
                 }
             ]
