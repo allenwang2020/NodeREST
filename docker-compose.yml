@@ -3,7 +3,7 @@
      links: 
        - web-node
      ports:
-       - "81:81"
+       - "80:80"
    web-node:
      build: ./web
      ports:
