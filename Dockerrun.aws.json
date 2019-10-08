@@ -24,7 +24,7 @@
 	                                                       
 	    {
 	      "name": "web-node",
-	      "image": "allenwang/noderest:node",
+	      "image": "allenwang2020/noderest:node",
 	      "essential": true,
 	      "memory": 128,
 	      "portMappings": [
@@ -51,7 +51,7 @@
 	    },
         {
             "name": "db-mongo",
-            "image": "allenwang/noderest:mongodb",
+            "image": "allenwang2020/noderest:mongodb",
             "environment": 
 	    	  [
 	            {
@@ -79,7 +79,7 @@
         },
         {
         	"name": "redis",
-        	"image": "allenwang/noderest:redis",
+        	"image": "allenwang2020/noderest:redis",
             "essential": true,
             "memory": 128,
             "portMappings": 
