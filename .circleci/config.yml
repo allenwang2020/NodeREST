@@ -1,0 +1,47 @@
+version: 2
+jobs:
+ build: 
+    docker:
+      - image: circleci/node:9.2.0
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Testing
+          command: docker-compose up -d
+ deploy:
+    machine: true 
+    steps:
+       - checkout
+       - run:
+          name: Install EB Command Line
+          command: >
+           sudo apt-get update &&
+           sudo apt-get install -y python python-dev python-pip python-virtualenv &&
+           sudo rm -rf /var/lib/apt/lists/* &&
+           sudo pip install awsebcli==3.14.11 &&
+           sudo pip install --upgrade --user awsebcli
+       - run:
+          name: Setup EB Credentials
+          command: >
+            mkdir ~/.aws &&
+            touch ~/.aws/config &&
+            chmod 600 ~/.aws/config &&
+            echo "[profile eb-cli]" > ~/.aws/config &&
+            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config &&
+            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
+       - deploy: 
+          name: Deploy to AWS EB
+          command: >
+            sudo eb use NoderestDev-env --profile eb-cli &&
+            sudo eb deploy -v --staged --profile eb-cli
+          
+workflows: 
+  version: 2 
+  docker-cicd:
+    jobs: 
+      - build
+      - deploy:
+          requires:
+            - build

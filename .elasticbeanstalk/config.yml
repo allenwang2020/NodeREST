@@ -1,0 +1,17 @@
+branch-defau:lts:
+  develop:
+    environment: nodeRestDev-env
+    group_suffix: null
+  master:
+    environment: NodeREST-env-prod
+branch-defaults:
+  develop:
+    environment: NoderestDev-env
+    group_suffix: null
+global:
+  application_name: NodeREST-DEV
+  default_ec2_keyname: null
+  default_platform: docker
+  default_region: us-west-2
+  profile: eb-cli
+  sc: git

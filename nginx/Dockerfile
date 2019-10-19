@@ -1,5 +1,5 @@
 FROM nginx
-MAINTAINER allen allenwang2020@gmail.com
+MAINTAINER allen allenwang.aws@gmail.com
 
 ADD conf/nginx.conf /etc/nginx/conf.d/nginx.conf
 

@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /usr/src/app/staging/web
+cd /var/app/current/web
 npm install
 npm start

@@ -39,7 +39,8 @@
 	      ],
 	      "links": 
 	        [
-	         "db-mongo"
+	         "db-mongo",
+	         "redis"
 	        ],
 	      "mountPoints": [
 	        {
@@ -75,7 +76,21 @@
                     "readOnly": false
                 }
             ]
-        },{
+        },
+        {
+        	"name": "redis",
+        	"image": "allenwang2020/noderest:redis",
+            "essential": true,
+            "memory": 128,
+            "portMappings": 
+           [
+            {
+                "hostPort": 6378,
+                "containerPort": 6378
+            }
+           ]
+        },
+        {
 		  "name": "nginx-proxy",
 		  "image": "nginx",
 		  "essential": true,

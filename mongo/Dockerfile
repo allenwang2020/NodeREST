@@ -10,7 +10,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
     echo "mongodb-org-mongos hold" | dpkg --set-selections && \
     echo "mongodb-org-tools hold" | dpkg --set-selections
 
-VOLUME /data/db
+VOLUME /var/db/mongo
 
 ENV AUTH yes
 ENV STORAGE_ENGINE wiredTiger
@@ -24,7 +24,7 @@ RUN chmod +x /run.sh
 RUN chmod +x /set_mongodb_password.sh
 
 
-EXPOSE 27017 28017
+EXPOSE 27017 28017 29017
 
 ENTRYPOINT ["/run.sh"]
 
