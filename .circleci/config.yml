@@ -29,7 +29,10 @@ jobs:
        - run:
           name: Setup EB Credentials
           command: >
+            sudo chmod 755 /home && 
+            sudo chmod 755 /circleci &&
             sudo mkdir ~/.aws &&
+            sudo chomd 755 ~/.aws && 
             sudo touch ~/.aws/config &&
             sudo chmod u+x ~/.aws/config &&
             sudo echo "[profile eb-cli]" > ~/.aws/config &&
