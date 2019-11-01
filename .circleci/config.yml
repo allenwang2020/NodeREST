@@ -31,7 +31,7 @@ jobs:
           command: >
             sudo chmod 755 /home && 
             sudo mkdir ~/.aws &&
-            sudo chomd 755 ~/.aws && 
+            sudo chmod 755 ~/.aws && 
             sudo touch ~/.aws/config &&
             sudo chmod u+x ~/.aws/config &&
             sudo echo "[profile eb-cli]" > ~/.aws/config &&
