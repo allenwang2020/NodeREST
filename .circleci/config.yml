@@ -21,6 +21,7 @@ jobs:
        - run:
           name: Install EB Command Line
           command: >
+           sudo pip install --upgrade pip &&
            sudo pip install awsebcli==3.15.3 &&
            sudo pip install --upgrade --user awsebcli
        - run:
