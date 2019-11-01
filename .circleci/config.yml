@@ -20,6 +20,7 @@ jobs:
        #- run: pip -V
        - run:
           name: Install EB Command Line
+          working_directory: /
           command: >
            sudo pip install --upgrade pip &&
            sudo pip install awsebcli==3.15.3 &&
