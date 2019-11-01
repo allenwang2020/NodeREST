@@ -25,22 +25,20 @@ jobs:
            sudo pip install --upgrade pip &&
            sudo pip install awsebcli==3.15.3 &&
            sudo pip install --upgrade --user awsebcli
-       #- run:
-       #   name: Setup EB Credentials
-       #   command: >
-       #     sudo chmod 755 /home && 
-       #     sudo mkdir ~/.aws &&
-       #     sudo chmod 755 ~/.aws && 
-       #     sudo touch ~/.aws/config &&
-       #     sudo chmod 755 ~/.aws/config &&
-       #     sudo echo "[profile eb-cli]" > ~/.aws/config &&
-       #     sudo echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config &&
-       #     sudo echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
+       - run:
+          name: Setup EB Credentials
+          command: >
+            sudo mkdir .aws &&
+            sudo touch .aws/config &&
+            sudo chmod 755 .aws/config &&
+            sudo echo "[profile eb-cli]" > .aws/config &&
+            sudo echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> .aws/config &&
+            sudo echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> .aws/config
        - deploy: 
           name: Deploy to AWS EB
           command: >
              ls &&
-             bash .setup-eb.sh &&
+             # bash .setup-eb.sh &&
              sudo eb use NoderestdevEnv-env --profile eb-cli &&
              sudo eb deploy -v --staged --profile eb-cli
           
