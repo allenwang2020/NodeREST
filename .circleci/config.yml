@@ -11,7 +11,8 @@ jobs:
           name: Testing
           command: docker-compose up -d
  deploy:
-    machine: true 
+     machine:
+      image: ubuntu-1604:201903-01 
     steps:
        - checkout
        - run:
