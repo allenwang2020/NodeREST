@@ -13,6 +13,7 @@ jobs:
  deploy:
     docker:
       - image: circleci/python:3.6.4
+      - image: docker:17.05.0-ce-git
     steps:
        - checkout
        #- run: sudo apt-get update
