@@ -11,7 +11,9 @@ jobs:
           name: Testing
           command: docker-compose up -d
  deploy:
-    machine: true
+    docker:
+      - image: circleci/node:9.2.0
+      - image: docker:17.05.0-ce-git
     steps:
        - checkout
        - run:
