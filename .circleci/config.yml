@@ -22,8 +22,8 @@ jobs:
            sudo apt-get update &&
            sudo apt-get install python 3.6.3  python3-pip  &&
            sudo rm -rf /var/lib/apt/lists/* &&
-           sudo pip install awsebcli==3.15.3 &&
-           sudo pip install --upgrade --user awsebcli
+           sudo pip3 install awsebcli==3.15.3 &&
+           sudo pip3 install --upgrade --user awsebcli
        - run:
           name: Setup EB Credentials
           command: >
