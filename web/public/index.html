@@ -37,13 +37,13 @@ display: none !important;
           </td>
         </tr>
         <tr ng-repeat="product in products">
-          <td>{{product.name1}}</td>
+          <td>{{product.name}}</td>
           <td>{{product.sku}}</td>
           <td>{{product.price}}</td>
           <td>
             <div class="btn-group">
-              <button class="btn btn-danger" ng-click="remove(product)">Remove</button>
-              <button class="btn btn-warning" ng-click="edit(product._id)">Edit</button>
+              <button class="btn btn-danger" ng-click="remove(product)">刪除</button>
+              <button class="btn btn-warning" ng-click="edit(product._id)">修改</button>
             </div>
           </td>
         </tr>
