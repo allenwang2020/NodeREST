@@ -60,8 +60,7 @@ jobs:
 #           name: Deploy to AWS EB
 #           command: >
 #              sudo eb use NoderestdevEnv-env --profile eb-cli &&
-#              sudo eb deploy -v --staged --profile eb-cli
-          
+#              sudo eb deploy -v --staged --profile eb-cli          
 workflows: 
   version: 2 
   docker-cicd:
