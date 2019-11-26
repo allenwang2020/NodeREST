@@ -1,15 +1,15 @@
 branch-defau:lts:
   develop:
-    environment: NoderestdevEnv-env
+    environment: Noderest-env
     group_suffix: null
   master:
-    environment: NoderestdevEnv-env
+    environment: Noderest-env
 branch-defaults:
   develop:
-    environment: NoderestdevEnv-env
+    environment: Noderest-env
     group_suffix: null
 global:
-  application_name: NoderestDev-env
+  application_name: Noderest
   default_ec2_keyname: null
   default_platform: docker
   default_region: us-east-1

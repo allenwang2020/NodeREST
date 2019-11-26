@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Deploy to EB if branch is master
           command: |
-            eb use NoderestdevEnv-env --profile eb-cli 
+            eb use Noderest-env --profile eb-cli 
             eb deploy --profile eb-cli
 #  deploy:
 #     docker:
