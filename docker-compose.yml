@@ -10,7 +10,6 @@
        - 3000:3000
      links:
        - db-mongo 
-       - redis
    db-mongo:  
      build: ./mongo
      environment:
