@@ -20,11 +20,11 @@
        - 28017:28017  
      volumes:
        - /var/db/mongo/products-demo:/data/db/mongo
-   memcached:
-     build: ./memcached
-     ports:
-       - 11212:11212
-   redis:
-     build: ./redis
-     ports:
-       - 6378:6378    
+   #memcached:
+     #build: ./memcached
+     #ports:
+       #- 11212:11212
+   #redis:
+     #build: ./redis
+     #ports:
+       #- 6378:6378    
